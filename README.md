@@ -145,8 +145,9 @@ proyecto-final-2025-2-asdw/
 
 # 🧪 3. Ejecución y Pruebas
 
-### 🎥 Demo
-Video disponible en: `docs/demo.mp4`
+### 🎥 Demostracion del Proyecto
+//Solo se muestra el testeo de el proyecto desde el la trsformacion de las imagenes hasta la prediccion final del modelo entrenado.
+Video disponible en: https://drive.google.com/drive/folders/1Zhs37uSLeXFPAmXO-H72U7fdr-iaVsof?usp=drive_link
 
 ### ⚙️ Parámetros de Entrenamiento
 

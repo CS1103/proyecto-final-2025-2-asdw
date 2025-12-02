@@ -68,7 +68,7 @@ int main(int argc, char** argv) {
     const std::string model_file = "dogcat.model";
 
     // !!! IMPORTANTE: REEMPLAZA ESTA RUTA CON LA RUTA DE TU IMAGEN .RAW DE PRUEBA !!!
-    const std::string test_image_path = "../dataset/test/dog/images.raw";
+    const std::string test_image_path = "../dataset/test/cat/gatotest.raw";
 
     // 2. Inicializar y Cargar el Modelo
     DogCatClassifier clf_test(input_dim, hidden_dim);
