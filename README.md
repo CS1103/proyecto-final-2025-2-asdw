@@ -1,6 +1,6 @@
 # 🐶🐱 Proyecto Final CS2013: DogCatMLP
 ## Clasificador de Perros y Gatos — MLP desde C++
-**Curso:** CS2013 Programación III — Universidad UTEC — 2025-1  
+**Curso:** CS2013 Programación III — Universidad UTEC — 2025-2  
 **Tema:** Red Neuronal Multicapa (MLP) · Clasificación Binaria · Implementación desde cero
 
 ---
