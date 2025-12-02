@@ -1,0 +1,54 @@
+/*
+from PIL import Image
+import os
+
+# CONFIGURACIÓN
+base_dir = r"C:\Users\Fernando\Desktop\Fernando\PrograIII (2)\EPIC3-ASWD\dataset\train"
+IMG_SIZE = 64  # ¡Debe coincidir con la de main.cpp!
+OUTPUT_EXT = '.raw'  # Nueva extensión de archivo
+
+
+def create_raw_data(img_path):
+    """Carga, redimensiona y guarda los píxeles como un array de bytes crudos."""
+    try:
+        # 1. Cargar y convertir a Grayscale
+        img = Image.open(img_path).convert('L')
+
+        # 2. Redimensionar al tamaño del modelo (64x64)
+        img = img.resize((IMG_SIZE, IMG_SIZE))
+
+        # 3. Obtener los bytes raw (4096 bytes)
+        raw_data = img.tobytes()
+
+        # 4. Crear el nuevo nombre de archivo (ej: dog.png -> dog.raw)
+        base_name = os.path.splitext(os.path.basename(img_path))[0]
+        output_filename = base_name + OUTPUT_EXT
+        output_path = os.path.join(os.path.dirname(img_path), output_filename)
+
+        # 5. Escribir los bytes crudos en el nuevo archivo
+        with open(output_path, 'wb') as f:
+            f.write(raw_data)
+
+        return output_filename
+
+    except Exception as e:
+        print(f"  [ERROR] No se pudo procesar {os.path.basename(img_path)}: {e}")
+        return None
+
+
+# --- Bucle principal ---
+print(f"Generando archivos {OUTPUT_EXT} de {IMG_SIZE}x{IMG_SIZE}...")
+for subdir in ['dog', 'cat']:
+    path = os.path.join(base_dir, subdir)
+    if not os.path.exists(path):
+        continue
+
+    print(f"Procesando carpeta: {subdir}")
+
+    for filename in os.listdir(path):
+        # Procesamos solo PNG (o JPG si quieres)
+        if filename.endswith(('.png', '.jpg', '.jpeg')):
+            full_path = os.path.join(path, filename)
+            new_file = create_raw_data(full_path)
+            if new_file:
+                print(f"  [OK] Creado: {new_file}")
